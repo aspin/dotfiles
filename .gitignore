@@ -1,0 +1,9 @@
+node_modules
+dist
+.tmp
+bower_components
+.atom-build.json
+.idea/
+*.iml
+.DS_Store
+.tags*
