@@ -11,13 +11,19 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tomasr/molokai'
+NeoBundle 'altercation/vim-colors-solarized'
+
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'mutewinter/swap-parameters'
-NeoBundle 'Valloric/YouCompleteMe'
+" NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'ekalinin/dockerfile.vim'
+NeoBundle 'google/vim-jsonnet'
+NeoBundle 'jiangmiao/auto-pairs'
 " NeoBundle 'majutsushi/tagbar' " needs ctags update
 call neobundle#end()
 
@@ -39,11 +45,10 @@ set foldmethod=indent
 set nofoldenable
 set foldlevel=20
 set foldnestmax=10
+set background=dark
 syntax on
 
-autocmd Filetype py setlocal tabstop=2
-
-colors molokai
+colorscheme solarized
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='luna'
