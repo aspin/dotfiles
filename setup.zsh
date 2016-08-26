@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
 rm -f ~/.vimrc
 rm -f ~/.gitconfig
