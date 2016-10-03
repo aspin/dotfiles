@@ -17,13 +17,15 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'mutewinter/swap-parameters'
-" NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'ekalinin/dockerfile.vim'
 NeoBundle 'google/vim-jsonnet'
 NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
 " NeoBundle 'majutsushi/tagbar' " needs ctags update
 call neobundle#end()
 
@@ -54,6 +56,13 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='luna'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_key_list_select_completion = ['<Down>']
+
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<tab>"
+
 map <C-\> :NERDTreeToggle<CR>
 
