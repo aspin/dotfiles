@@ -1,9 +1,6 @@
 #!/bin/zsh
 
-rm -f ~/.vimrc
-rm -f ~/.gitconfig
-rm -f ~/.npmrc
-rm -f ~/.tmux.conf
+rm -f ~/.vimrc ~/.gitconfig ~/.npmrc ~/.tmux.conf ~/.tern-config
 rm -rf ~/.zprezto
 
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
@@ -19,3 +16,4 @@ ln -s `pwd`/.vimrc ~/.vimrc
 ln -s `pwd`/.gitconfig ~/.gitconfig
 ln -s `pwd`/.npmrc ~/.npmrc
 ln -s `pwd`/.tmux.conf ~/.tmux.conf
+ln -s `pwd`/.tern-config ~/.tern-config
