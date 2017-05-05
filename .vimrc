@@ -1,37 +1,7 @@
-if 0 | endif
-
-if has('vim_starting')
-  if &compatible
-    set nocompatible
-  endif
-
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'altercation/vim-colors-solarized'
-
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'mutewinter/swap-parameters'
-NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'tpope/vim-sleuth'
-NeoBundle 'ekalinin/dockerfile.vim'
-NeoBundle 'google/vim-jsonnet'
-NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
-" NeoBundle 'majutsushi/tagbar' " needs ctags update
-call neobundle#end()
-
-filetype plugin indent on
-NeoBundleCheck
-
+" ##########################################
+" #                SETTINGS                #
+" ##########################################
+"
 set smartindent
 set tabstop=2
 set shiftwidth=2
@@ -50,6 +20,39 @@ set foldnestmax=10
 set background=dark
 syntax on
 
+" ##########################################
+" #                PLUGINS                 #
+" ##########################################
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mutewinter/swap-parameters'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-sleuth'
+Plug 'ekalinin/dockerfile.vim'
+Plug 'google/vim-jsonnet'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'majutsushi/tagbar'
+Plug 'marijnh/tern_for_vim'
+Plug 'udalov/kotlin-vim'
+
+call plug#end()
+
+" ##########################################
+" #             PLUGIN CONFIG              #
+" ##########################################
+"
 colorscheme solarized
 
 let g:airline_powerline_fonts = 1
@@ -64,5 +67,48 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsExpandTrigger="<tab>"
 
-map <C-\> :NERDTreeToggle<CR>
+let g:tagbar_type_javascript = {
+  \ 'ctagstype': 'js',
+  \ 'kinds': [
+    \ 'n:constant:0:0',
+    \ 'o:object',
+    \ 'c:class',
+    \ 'f:function',
+    \ 'm:method'
+  \ ],
+  \ 'sro': '.',
+  \ 'kind2scope': {
+    \ 'o': 'object',
+    \ 'c': 'class',
+  \ }
+\}
 
+" ##########################################
+" #               NERD TREE                #
+" ##########################################
+"
+
+map <C-\> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
+
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
