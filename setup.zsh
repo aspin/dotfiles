@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-rm -f ~/.vimrc ~/.gitconfig ~/.npmrc ~/.tmux.conf ~/.tern-config
 rm -rf ~/.zprezto
 
 # Prezto Setup
@@ -12,8 +11,12 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 # symlink files
-ln -s `pwd`/.vimrc ~/.vimrc
-ln -s `pwd`/.gitconfig ~/.gitconfig
-ln -s `pwd`/.npmrc ~/.npmrc
-ln -s `pwd`/.tmux.conf ~/.tmux.conf
-ln -s `pwd`/.tern-config ~/.tern-config
+
+for file in $(ls ./)
+do
+	if ! [[ "$file" =~ '.*zsh'$ ]]
+	then
+		rm ~/.$file
+		ln -s `pwd`/$file ~/.$file
+	fi
+done
