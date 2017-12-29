@@ -3,7 +3,7 @@
 # homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew install wget nvm macvim cmake
+brew install wget nvm macvim cmake thefuck
 
 # overriding vim with macvim
 brew linkapps macvim
