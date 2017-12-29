@@ -16,7 +16,7 @@ for file in $(ls ./)
 do
 	if ! [[ "$file" =~ '.*zsh'$ ]]
 	then
-		rm ~/.$file
+		rm -f ~/.$file
 		ln -s `pwd`/$file ~/.$file
 	fi
 done

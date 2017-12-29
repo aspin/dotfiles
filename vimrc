@@ -46,6 +46,9 @@ Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim'
 Plug 'udalov/kotlin-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'elixir-lang/vim-elixir'
 
 call plug#end()
 
@@ -55,10 +58,16 @@ call plug#end()
 "
 colorscheme solarized
 
+let g:jsx_ext_required = 0
+let g:javascript_plugin_flow = 1
+
+
 let g:airline_powerline_fonts = 1
 let g:airline_theme='luna'
+
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_key_list_select_completion = ['<Down>']
