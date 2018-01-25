@@ -18,6 +18,7 @@ set nofoldenable
 set foldlevel=20
 set foldnestmax=10
 set background=dark
+set nowrap
 syntax on
 
 " ##########################################
@@ -35,7 +36,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mutewinter/swap-parameters'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-sleuth'
 Plug 'ekalinin/dockerfile.vim'
@@ -49,6 +49,8 @@ Plug 'udalov/kotlin-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'elixir-lang/vim-elixir'
+Plug 'jnurmine/zenburn'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
 
@@ -56,18 +58,15 @@ call plug#end()
 " #             PLUGIN CONFIG              #
 " ##########################################
 "
-colorscheme solarized
+" colorscheme solarized
+colors zenburn
+
 
 let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
 
-
 let g:airline_powerline_fonts = 1
-let g:airline_theme='luna'
-
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:airline_theme='zenburn'
 
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_key_list_select_completion = ['<Down>']
@@ -92,6 +91,8 @@ let g:tagbar_type_javascript = {
   \ }
 \}
 
+map <C-P> :call fzf#run(fzf#wrap({'source': 'ag -g ""'}))<CR>
+
 " ##########################################
 " #               NERD TREE                #
 " ##########################################
@@ -101,6 +102,7 @@ map <C-\> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
 autocmd vimenter * NERDTree
+autocmd vimenter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
