@@ -18,7 +18,7 @@
 [core]
 	editor = vim
 	autocrlf = input
-	excludesfile = /Users/kevin.chen/.gitignore_global
+	excludesfile = /Users/kevin.chen/.gitignore
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
