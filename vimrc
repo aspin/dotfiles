@@ -27,38 +27,46 @@ syntax on
 
 call plug#begin('~/.vim/plugged')
 
+" Themes
 Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
+Plug 'jnurmine/zenburn'
+Plug 'vim-airline/vim-airline-themes'
 
+" UI mods
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Editor mods
 Plug 'mutewinter/swap-parameters'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-sleuth'
+Plug 'honza/vim-snippets'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'SirVer/ultisnips'
+
+" Language/Syntax support
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'ekalinin/dockerfile.vim'
 Plug 'google/vim-jsonnet'
-" Plug 'jiangmiao/auto-pairs'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'majutsushi/tagbar'
-Plug 'marijnh/tern_for_vim'
 Plug 'udalov/kotlin-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'elixir-lang/vim-elixir'
-Plug 'jnurmine/zenburn'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'marijnh/tern_for_vim'
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'flowtype/vim-flow'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
 " ##########################################
 " #             PLUGIN CONFIG              #
 " ##########################################
-"
-" colorscheme solarized
+
 colors zenburn
 
 
@@ -67,6 +75,8 @@ let g:javascript_plugin_flow = 1
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='zenburn'
+
+map <C-P> :call fzf#run(fzf#wrap({'source': 'ag -g ""'}))<CR>
 
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_key_list_select_completion = ['<Down>']
@@ -91,7 +101,7 @@ let g:tagbar_type_javascript = {
   \ }
 \}
 
-map <C-P> :call fzf#run(fzf#wrap({'source': 'ag -g ""'}))<CR>
+let g:jsonnet_fmt_on_save = 0
 
 " ##########################################
 " #               NERD TREE                #
@@ -101,9 +111,11 @@ map <C-P> :call fzf#run(fzf#wrap({'source': 'ag -g ""'}))<CR>
 map <C-\> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
-autocmd vimenter * NERDTree
-autocmd vimenter * wincmd p
+autocmd vimenter * if (&filetype !=# 'gitcommit') | NERDTree | endif
+autocmd vimenter * wincmd w
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let NERDTreeShowHidden=1
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
