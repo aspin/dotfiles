@@ -1,30 +1,30 @@
 [user]
-	name = Kevin Chen
-	email = tsunami70875@gmail.com
+  name = Kevin Chen
+  email = kevin.chen@fitbit.com
 [push]
-	default = current
+  default = current
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
 [alias]
-	co = checkout
-	br = branch
-	st = status
-	ci = commit
-	llog = log --graph --pretty=format:'%C(yellow)%h%Creset %C(bold blue)%an%Creset -%C(bold cyan)%d%Creset %s %C(green)(%cr)%Creset' --abbrev-commit --date=relative
-	lg = log --pretty=format:'%C(yellow)%h %C(green)%ar %C(bold blue)%an%Creset\n%s' --abbrev-commit --date=relative
-	dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
+  co = checkout
+  br = branch
+  st = status
+  ci = commit
+  llog = log --graph --pretty=format:'%C(yellow)%h%Creset %C(bold blue)%an%Creset -%C(bold cyan)%d%Creset %s %C(green)(%cr)%Creset' --abbrev-commit --date=relative
+  lg = log --pretty=format:'%C(yellow)%h %C(green)%ar %C(bold blue)%an%Creset\n%s' --abbrev-commit --date=relative
+  dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
   list-recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(color:yellow)%(committerdate:relative)%(color:reset)@%(authorname)@%(color:red bold)%(refname:lstrip=-1)%(color:reset)' 
   recent = !git list-recent --color=always | column -s '@' -t 
   mine = !git list-recent --color=always | column -s '@' -t | grep --color=never 'Kevin Chen'
 [core]
-	editor = vim
-	autocrlf = input
-	excludesfile = /Users/kevin.chen/.gitignore
+  editor = vim
+  autocrlf = input
+  excludesfile = /Users/kevin.chen/.gitignore
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
