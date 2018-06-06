@@ -39,9 +39,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 " Editor mods
-Plug 'mutewinter/swap-parameters'
+" Plug 'mutewinter/swap-parameters'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-sleuth'
 Plug 'honza/vim-snippets'
@@ -69,22 +71,23 @@ call plug#end()
 
 colors zenburn
 
-
+" js plugin
 let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
 
+" airline config
 let g:airline_powerline_fonts = 1
-let g:airline_theme='zenburn'
+let g:airline_theme = 'zenburn'
 
+" fzf
 map <C-P> :call fzf#run(fzf#wrap({'source': 'ag -g ""'}))<CR>
 
+" ycm
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_key_list_select_completion = ['<Down>']
 
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsExpandTrigger="<tab>"
 
+" custom ctags for js
 let g:tagbar_type_javascript = {
   \ 'ctagstype': 'js',
   \ 'kinds': [
@@ -101,7 +104,14 @@ let g:tagbar_type_javascript = {
   \ }
 \}
 
+" jsonnet
 let g:jsonnet_fmt_on_save = 0
+
+" NERDCommenter
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDTrimTrailingWhitespace = 1
 
 " ##########################################
 " #               NERD TREE                #
@@ -115,7 +125,7 @@ autocmd vimenter * if (&filetype !=# 'gitcommit') | NERDTree | endif
 autocmd vimenter * wincmd w
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
