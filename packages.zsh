@@ -9,3 +9,7 @@ brew install wget nvm macvim cmake thefuck hub the_silver_searcher
 # overriding vim with macvim
 brew linkapps macvim
 ln -s /usr/local/bin/mvim /usr/local/bin/vim
+
+# vim plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
