@@ -19,6 +19,7 @@ set foldlevel=20
 set foldnestmax=10
 set background=dark
 set nowrap
+set incsearch
 syntax on
 
 " ##########################################
