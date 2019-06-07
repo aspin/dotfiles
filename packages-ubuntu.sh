@@ -2,7 +2,7 @@
 
 # Tested for Ubuntu 12.04
 
-sudo apt-get install curl wget zsh vim python-pip python-software-properties silversearcher-ag fzf -yqq
+sudo apt-get install curl wget zsh vim python-pip python-software-properties silversearcher-ag fzf python python-pip -yqq 
 sudo add-apt-repository ppa:fkrull/deadsnakes
 sudo apt-get update
 sudo apt-get install python2.7
