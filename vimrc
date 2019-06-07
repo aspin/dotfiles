@@ -63,6 +63,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'flowtype/vim-flow'
 Plug 'mxw/vim-jsx'
+Plug 'rust-lang/rust.vim' 
 
 call plug#end()
 
