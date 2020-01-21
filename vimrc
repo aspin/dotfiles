@@ -1,28 +1,4 @@
 " ##########################################
-" #                SETTINGS                #
-" ##########################################
-"
-set smartindent
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set number
-set encoding=utf-8
-set laststatus=2
-set noshowmode
-set term=screen-256color
-set nocompatible
-set backspace=2
-set foldmethod=indent
-set nofoldenable
-set foldlevel=20
-set foldnestmax=10
-set background=dark
-set nowrap
-set incsearch
-syntax on
-
-" ##########################################
 " #                PLUGINS                 #
 " ##########################################
 
@@ -43,16 +19,17 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
 
 " Editor mods
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-sleuth'
 Plug 'honza/vim-snippets'
-" Plug 'jiangmiao/auto-pairs'
-" Plug 'SirVer/ultisnips'
+Plug 'mattn/webapi-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'SirVer/ultisnips'
 
 " Language/Syntax support
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --rust-completer' }
 Plug 'ekalinin/dockerfile.vim'
 Plug 'google/vim-jsonnet'
 Plug 'udalov/kotlin-vim'
@@ -85,9 +62,14 @@ let g:airline_theme = 'zenburn'
 map <C-P> :call fzf#run(fzf#wrap({'source': 'ag -g ""'}))<CR>
 
 " ycm
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+let g:ycm_rust_src_path = '/Users/kevin.chen/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:ycm_log_level = 'debug'
 
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<ENTER>']
 
 " custom ctags for js
 let g:tagbar_type_javascript = {
@@ -114,6 +96,9 @@ let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
+
+" rust
+let g:rust_clip_command = 'pbcopy'
 
 " ##########################################
 " #               NERD TREE                #
@@ -147,3 +132,50 @@ call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+
+" ##########################################
+" #               SYNTASTIC                #
+" ##########################################
+"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+noremap <C-w>e :SyntasticToggleMode<CR>
+
+" ##########################################
+" #                SETTINGS                #
+" ##########################################
+"
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set number
+set encoding=utf-8
+set laststatus=2
+set noshowmode
+" set term=screen-256color
+set nocompatible
+set backspace=2
+set foldmethod=indent
+set nofoldenable
+set foldlevel=20
+set foldnestmax=10
+set background=dark
+set nowrap
+set incsearch
+syntax on
+
+" ##########################################
+" #                 PYTHON                 #
+" ##########################################
+"
+au FileType python set tabstop=4
+au FileType python set shiftwidth=4
+au FileType python set expandtab

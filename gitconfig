@@ -12,6 +12,7 @@
   br = branch
   st = status
   ci = commit
+  cp = cherry-pick
   llog = log --graph --pretty=format:'%C(yellow)%h%Creset %C(bold blue)%an%Creset -%C(bold cyan)%d%Creset %s %C(green)(%cr)%Creset' --abbrev-commit --date=relative
   lg = log --pretty=format:'%C(yellow)%h %C(green)%ar %C(bold blue)%an%Creset\n%s' --abbrev-commit --date=relative
   dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
@@ -29,3 +30,5 @@
 [mergetool "sourcetree"]
   cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
+[checkout]
+  defaultRemote = origin
