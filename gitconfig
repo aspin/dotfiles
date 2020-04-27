@@ -20,6 +20,8 @@
     --format='%(color:yellow)%(committerdate:relative)%(color:reset)@%(authorname)@%(color:red bold)%(refname:lstrip=-1)%(color:reset)@%(color:white dim)%(contents:subject)%(color:reset)' 
   recent = !git list-recent --color=always | column -s '@' -t 
   mine = !git list-recent --color=always | column -s '@' -t | grep --color=never 'Kevin Chen'
+  cop = "!f(){ git checkout \"$1\" && git pull; };f"
+  mup = "!f(){ BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout \"$1\" && git pull && git checkout $BRANCH && git merge \"$1\"; };f"
 [core]
   editor = vim
   autocrlf = input

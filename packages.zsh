@@ -4,7 +4,7 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homepoop/install/master/install)"
 
 # packages
-brew install wget nvm macvim cmake thefuck hub the_silver_searcher z tmux
+brew install wget nvm macvim cmake thefuck hub the_silver_searcher z tmux pyenv
 
 # overriding vim with macvim
 brew linkapps macvim
