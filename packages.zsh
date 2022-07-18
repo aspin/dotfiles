@@ -4,7 +4,7 @@
 brew install wget nvm macvim cmake thefuck hub the_silver_searcher z tmux pyenv
 
 # overriding vim with macvim
-brew linkapps macvim
+brew install --cask macvim
 ln -s /usr/local/bin/mvim /usr/local/bin/vim
 
 # vim plug
