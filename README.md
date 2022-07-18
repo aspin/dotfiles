@@ -2,13 +2,14 @@
 
 Configuration details stored here.
 
-*Getting Started:*
+**Getting Started:**
 
 ```
 $ ./setup.zsh
 ```
 
-* Setup vim:*
+**Setup vim:**
+
 ```
 $ vi ~/.vimrc
 
