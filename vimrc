@@ -41,6 +41,7 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'flowtype/vim-flow'
 Plug 'mxw/vim-jsx'
 Plug 'rust-lang/rust.vim' 
+Plug 'tomlion/vim-solidity'
 
 call plug#end()
 
@@ -59,10 +60,10 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'zenburn'
 
 " fzf
-map <C-P> :call fzf#run(fzf#wrap({'source': 'ag -g ""'}))<CR>
+nnoremap <C-P> :call fzf#run(fzf#wrap({'source': 'ag -g ""'}))<CR>
 
 " ycm
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+let g:ycm_path_to_python_interpreter = '/Users/kevin.chen/.pyenv/shims/python'
 let g:ycm_rust_src_path = '/Users/kevin.chen/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -70,6 +71,11 @@ let g:ycm_autoclose_preview_window_after_insertion = 0
 let g:ycm_log_level = 'debug'
 
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<ENTER>']
+
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>jb :YcmCompleter GoToImplementation<CR>
+
 
 " custom ctags for js
 let g:tagbar_type_javascript = {
@@ -143,7 +149,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ["mypy"]
@@ -172,6 +178,8 @@ set foldnestmax=10
 set background=dark
 set nowrap
 set incsearch
+set list
+set listchars=tab:>-
 syntax on
 
 " ##########################################
