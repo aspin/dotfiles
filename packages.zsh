@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-# homepoop
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homepoop/install/master/install)"
-
 # packages
 brew install wget nvm macvim cmake thefuck hub the_silver_searcher z tmux pyenv
 
