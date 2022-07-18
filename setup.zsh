@@ -30,3 +30,4 @@ done
 # Install powerline fonts
 git clone https://github.com/powerline/fonts ~/powerline-fonts
 cd ~/powerline-fonts && ./install.sh
+rm -rf ~/powerline-fonts
