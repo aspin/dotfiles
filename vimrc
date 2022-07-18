@@ -63,7 +63,6 @@ let g:airline_theme = 'zenburn'
 nnoremap <C-P> :call fzf#run(fzf#wrap({'source': 'ag -g ""'}))<CR>
 
 " ycm
-let g:ycm_path_to_python_interpreter = '/Users/kevin.chen/.pyenv/shims/python'
 let g:ycm_rust_src_path = '/Users/kevin.chen/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
