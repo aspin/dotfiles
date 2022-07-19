@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # packages
-brew install wget nvm cmake thefuck hub the_silver_searcher z tmux pyenv gh
+brew install git wget nvm cmake thefuck hub the_silver_searcher z tmux pyenv gh jq
 
 # overriding vim with macvim
 brew install --cask macvim
