@@ -1,0 +1,3 @@
+nnoremap gn :action GotoNextError<CR>
+nnoremap gp :action GotoPreviousError<CR>
+nnoremap gd :action GotoClass<CR>
