@@ -1,8 +1,13 @@
 [user]
   name = Kevin Chen
   email = kevin@bloxroute.com
+  signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH3f1HBZMPvDIsG8Wfokf8IjrfzeVHhm2/x6yhXFgilA kevin@bloxroute.com"
 [push]
   default = current
+[commit]
+  gpgsign = true
+[gpg]
+  format = ssh
 [filter "media"]
   required = true
   clean = git media clean %f
