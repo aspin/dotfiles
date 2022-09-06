@@ -1,3 +1,15 @@
+# action list
+# https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
+
 nnoremap gn :action GotoNextError<CR>
 nnoremap gp :action GotoPreviousError<CR>
-nnoremap gd :action GotoClass<CR>
+nnoremap gD :action GotoImplementation<CR>
+nnoremap <Leader>rr :action Run<CR>
+nnoremap <Leader>rc :action RunClass<CR>
+nnoremap <Leader>rn :action RunConfiguration<CR>
+nnoremap <Leader>re :action editRunConfigurations<CR>
+nnoremap <Leader>dd :action Debug<CR>
+nnoremap <Leader>dc :action DebugClass<CR>
+nnoremap <Leader>dn :action ChooseDebugConfiguration<CR>
+
+:command Annotate :action Annotate
