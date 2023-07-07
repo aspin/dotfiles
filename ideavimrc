@@ -1,9 +1,15 @@
 # action list
 # https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
 
+set NERDTree
+
 nnoremap gn :action GotoNextError<CR>
 nnoremap gp :action GotoPreviousError<CR>
 nnoremap gD :action GotoImplementation<CR>
+
+nnoremap <C-H> :action ShowErrorDescription<CR>
+nnoremap <C-B> :action ToggleLineBreakpoint<CR>
+
 nnoremap <Leader>rr :action Run<CR>
 nnoremap <Leader>rc :action RunClass<CR>
 nnoremap <Leader>rn :action RunConfiguration<CR>
@@ -11,5 +17,9 @@ nnoremap <Leader>re :action editRunConfigurations<CR>
 nnoremap <Leader>dd :action Debug<CR>
 nnoremap <Leader>dc :action DebugClass<CR>
 nnoremap <Leader>dn :action ChooseDebugConfiguration<CR>
+nnoremap <Leader>ee :action editRunConfigurations<CR>
+
+nnoremap <Leader>s :action SelectIn<CR>
 
 :command Annotate :action Annotate
+:command Anno :action Annotate
