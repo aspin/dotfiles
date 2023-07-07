@@ -2,6 +2,8 @@
   name = Kevin Chen
   email = kevin@bloxroute.com
   signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH3f1HBZMPvDIsG8Wfokf8IjrfzeVHhm2/x6yhXFgilA kevin@bloxroute.com"
+[init]
+  defaultBranch = main
 [push]
   default = current
 [commit]
@@ -42,5 +44,7 @@
   defaultRemote = origin
 [pull]
   rebase = true
+[tag]
+  gpgSign = true
 [url "ssh://git@github.com"]
 	insteadOf = https://github.com
