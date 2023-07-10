@@ -1,7 +1,7 @@
-init-author-name=Kevin J. Chen
+init-author-name=Kevin Chen
 init-author-email=kevinjchen94@gmail.com
-init-author-url=http://kevinchen.ninja/
 init-license=MIT
 save-exact=true
-//registry.npmjs.org/:_authToken=f15f7d77-4740-431b-bde0-cd7c369acf74
+//registry.npmjs.org/:_authToken=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
 scripts-prepend-node-path=auto
+save-prefix=
