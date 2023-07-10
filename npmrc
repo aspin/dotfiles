@@ -1,7 +1,0 @@
-init-author-name=Kevin Chen
-init-author-email=kevinjchen94@gmail.com
-init-license=MIT
-save-exact=true
-//registry.npmjs.org/:_authToken=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
-scripts-prepend-node-path=auto
-save-prefix=
