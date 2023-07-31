@@ -1,13 +1,16 @@
 [user]
   name = Kevin Chen
-  email = kevinjchen94@gmail.com
-  signingkey = 1C83DAE227327CD5
+  useConfigOnly = true
 [init]
   defaultBranch = main
 [push]
   default = current
 [commit]
   gpgsign = true
+[include]
+  path = ~/.gitconfig.aspin
+[includeIf "gitdir:~/workspace/github.com/hrplp/"]
+  path = ~/.gitconfig.hrplp
 [filter "media"]
   required = true
   clean = git media clean %f
