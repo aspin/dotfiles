@@ -1,7 +1,10 @@
 #!/bin/zsh
 
+# nvm: brew installation is not supported
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+
 # packages
-brew install git wget nvm cmake thefuck the_silver_searcher tmux pyenv gh jq
+brew install git wget cmake thefuck the_silver_searcher tmux pyenv gh jq
 
 # overriding vim with macvim
 brew install --cask macvim
