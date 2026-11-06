@@ -74,3 +74,7 @@ logger.info("Processing customer")
 # ✅ actionable
 logger.info("Sent invoices", customer_id=customer_id, invoice_count=len(invoices))
 ```
+
+## Local overrides
+
+If `~/.claude/skills-work/reviewing-code.md` exists, read it and apply it as additional rules for this skill; where it conflicts with the text above, it wins.
