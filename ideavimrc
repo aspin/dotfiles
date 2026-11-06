@@ -2,10 +2,12 @@
 # https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
 
 set NERDTree
+set ideajoin
 
 nnoremap gn :action GotoNextError<CR>
 nnoremap gp :action GotoPreviousError<CR>
 nnoremap gD :action GotoImplementation<CR>
+nnoremap <C-W>f :action MoveEditorToOppositeTabGroup<CR>
 
 nnoremap <C-H> :action ShowErrorDescription<CR>
 nnoremap <C-B> :action ToggleLineBreakpoint<CR>
@@ -23,3 +25,6 @@ nnoremap <Leader>s :action SelectIn<CR>
 
 :command Annotate :action Annotate
 :command Anno :action Annotate
+:command AskAI :action AIAssistant.ToolWindow.ShowOrFocus
+
+nnoremap <Leader>ai :AskAI<CR>

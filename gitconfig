@@ -8,9 +8,9 @@
 [commit]
   gpgsign = true
 [include]
+  path = ~/.gitconfig.local
+[includeIf "gitdir:~/workspace/github.com/aspin/"]
   path = ~/.gitconfig.aspin
-[includeIf "gitdir:~/workspace/github.com/work/"]
-  path = ~/.gitconfig.work
 [filter "media"]
   required = true
   clean = git media clean %f
@@ -27,14 +27,15 @@
   list-recent = for-each-ref --count=30 --sort=-committerdate refs/heads/ \
     --format='%(color:yellow)%(committerdate:relative)%(color:reset)@%(authorname)@%(color:red bold)%(refname:lstrip=2)%(color:reset)@%(color:white dim)%(contents:subject)%(color:reset)' 
   recent = !git list-recent --color=always | column -s '@' -t 
-  mine = !git list-recent --color=always | column -s '@' -t | grep --color=never 'Kevin Chen'
+  mine = "!git list-recent --color=always | column -s '@' -t | grep --color=never \"$(git config user.name)\""
   cop = "!f(){ git checkout \"$1\" && git pull; };f"
+  com = "!f(){ git switch $(git list-recent |  grep --color=never \"$(git config user.name)\" | head -n \"${1:-1}\" | tail -n 1 |  awk -F '@' '{print $3}'); }; f"
   mup = "!f(){ BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout \"$1\" && git pull && git checkout $BRANCH && git merge \"$1\"; };f"
   rup = "!f(){ BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout \"$1\" && git pull && git checkout $BRANCH && git rebase \"$1\"; };f"
 [core]
   editor = vim
   autocrlf = input
-  excludesfile = /Users/aspin/.gitignore
+  excludesfile = ~/.gitignore
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path = 

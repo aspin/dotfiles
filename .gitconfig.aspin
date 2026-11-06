@@ -2,3 +2,6 @@
   email = kevinjchen94@gmail.com
   signingkey = 1C83DAE227327CD5
 
+[core]
+  sshCommand = ssh -F none -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes
+
