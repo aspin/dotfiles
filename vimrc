@@ -29,7 +29,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
 
 " Language/Syntax support
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --rust-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': '/opt/homebrew/bin/python3 install.py --rust-completer' }
 Plug 'ekalinin/dockerfile.vim'
 Plug 'google/vim-jsonnet'
 Plug 'udalov/kotlin-vim'
@@ -63,7 +63,7 @@ let g:airline_theme = 'zenburn'
 nnoremap <C-P> :call fzf#run(fzf#wrap({'source': 'ag -g ""'}))<CR>
 
 " ycm
-let g:ycm_rust_src_path = '/Users/kevin.chen/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+let g:ycm_server_python_interpreter = '/opt/homebrew/bin/python3'
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 0
