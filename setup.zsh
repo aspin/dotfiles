@@ -57,6 +57,10 @@ touch ~/.gitconfig.local
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "`pwd`/preferences"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
+# Rectangle shortcuts; re-export after changing them with
+#   defaults export com.knollsoft.Rectangle preferences/com.knollsoft.Rectangle.plist
+defaults import com.knollsoft.Rectangle preferences/com.knollsoft.Rectangle.plist
+
 # Install powerline fonts
 git clone https://github.com/powerline/fonts ~/powerline-fonts
 cd ~/powerline-fonts && ./install.sh
