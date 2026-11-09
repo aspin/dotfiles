@@ -1,6 +1,6 @@
 # Installed by setup.zsh. WORK_MACHINE=1 skips the work_machine-guarded apps.
 
-work_machine = ENV["WORK_MACHINE"] == "1"
+work_machine = ENV["HOMEBREW_WORK_MACHINE"] == "1"
 
 tap "agavra/tap"
 
@@ -12,6 +12,7 @@ brew "thefuck"
 brew "the_silver_searcher"
 brew "ripgrep"
 brew "tmux"
+brew "openssl@3"
 brew "pyenv"
 brew "pyenv-virtualenv"
 brew "gh"
