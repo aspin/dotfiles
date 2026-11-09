@@ -1,0 +1,22 @@
+onboarding = false
+# herdr configuration
+# Sidebar agent rows: lead with the agent session name (terminal title),
+# keep repo/workspace + tab on the second row.
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", { token = "terminal_title_stripped", fg = "#cdd6f4", bold = true, dim = false }],
+  [{ token = "workspace", fg = "#6c7086", bold = false }, { token = "tab", fg = "#6c7086" }],
+]
+
+[session]
+# Reopen tabs and resume each Claude pane into its conversation after a herdr
+# server restart or reboot. Pinned explicitly (matches the current default) so a
+# future default change can't silently disable it.
+resume_agents_on_restore = true
+
+# Swap the focused pane with its right-hand neighbour, or its left one if it
+# has none. A swap with no neighbour still exits 0, so check "changed".
+[[keys.command]]
+key = "prefix+shift+l"
+type = "shell"
+command = "/opt/homebrew/bin/herdr pane swap --current --direction right | grep -q '\"changed\":true' || /opt/homebrew/bin/herdr pane swap --current --direction left"

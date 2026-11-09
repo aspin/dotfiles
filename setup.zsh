@@ -37,7 +37,7 @@ rm -rf ~/powerline-fonts
 for file in $(ls ./)
 do
   case "$file" in
-    *zsh|*.sh|*.md|Brewfile|LICENSE|preferences|claude) ;;
+    *zsh|*.sh|*.md|Brewfile|LICENSE|preferences|claude|herdr) ;;
     *)
       rm -f ~/.$file
       ln -s `pwd`/$file ~/.$file
@@ -50,6 +50,12 @@ ln -sf `pwd`/.gitconfig.aspin ~/.gitconfig.aspin
 
 # Claude Code skills and hooks
 ./claude/install.zsh
+
+# herdr: sidebar rows, agent resume, keys. The Claude integration adds the hook that
+# reports session ids, which herdr needs to resume agents after a restart.
+mkdir -p ~/.config/herdr
+ln -sf `pwd`/herdr/config.toml ~/.config/herdr/config.toml
+herdr integration install claude
 
 # Machine-specific git identity; gitconfig includes it by default
 touch ~/.gitconfig.local
