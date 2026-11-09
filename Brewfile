@@ -54,7 +54,7 @@ cask "gpg-suite"
 cask "yubico-authenticator"
 cask "logi-options+"
 cask "wispr-flow"
-cask "ledger-live"
+cask "ledger-wallet"
 cask "chatgpt"
 
 # Blocked on work machines, or installed and managed there by other means.
