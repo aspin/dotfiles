@@ -38,4 +38,4 @@ $ vi ~/.vimrc
 :PlugInstall
 ```
 
-**Claude Code:** see `claude/README.md`.
+**Agent skills (Claude Code and Codex):** see `agents/README.md`. **Claude Code hooks:** see `claude/README.md`.

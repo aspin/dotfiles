@@ -37,7 +37,7 @@ rm -rf ~/powerline-fonts
 for file in $(ls ./)
 do
   case "$file" in
-    *zsh|*.sh|*.md|Brewfile|LICENSE|preferences|claude|herdr) ;;
+    *zsh|*.sh|*.md|Brewfile|LICENSE|preferences|agents|claude|herdr) ;;
     *)
       rm -f ~/.$file
       ln -s `pwd`/$file ~/.$file
@@ -48,8 +48,8 @@ done
 # `ls` above hides dot-prefixed files, so link .gitconfig.aspin by hand
 ln -sf `pwd`/.gitconfig.aspin ~/.gitconfig.aspin
 
-# Claude Code skills and hooks
-./claude/install.zsh
+# Agent skills (Claude Code and Codex) and Claude Code hooks
+./agents/install.zsh
 
 # herdr: sidebar rows, agent resume, keys. The Claude integration adds the hook that
 # reports session ids, which herdr needs to resume agents after a restart.
