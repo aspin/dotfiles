@@ -1,0 +1,120 @@
+claude/README.md
+  s_5047d3c7f64d94::t_96336b95823e0a 1,3-4,6-9,11-13
+README.md
+  s_5047d3c7f64d94::t_14ef8b0c57ab3b 41
+agents/README.md
+  s_5047d3c7f64d94::t_fa9f2620a84c8e 1-19
+setup.zsh
+  s_5047d3c7f64d94::t_c2fec67d532e8a 40
+  s_5047d3c7f64d94::t_67c8dfc6a2e713 51-52
+agents/install.zsh
+  s_5047d3c7f64d94::t_6bf6d8083200fd 2,6,24-25,27,30,36
+agents/skills/brainstorming/SKILL.md
+  s_5047d3c7f64d94::t_03eee663cdc272 3,6-267,270-282,289-294,298-300,302-304,306,308,310-313,315-316
+agents/skills/brainstorming/builder-check-prompt.md
+  s_5047d3c7f64d94::t_c5efedabf2615d 1-23
+agents/skills/brainstorming/scripts/server.cjs
+  s_5047d3c7f64d94::t_9c172c8a0a6510 264
+agents/skills/brainstorming/scripts/start-server.sh
+  s_5047d3c7f64d94::t_c0e5b65a613765 117-123
+agents/skills/brainstorming/visual-companion.md
+  s_5047d3c7f64d94::t_919a63d8d62d41 38,65,74,81,98,291
+agents/skills/code-review-checklist/SKILL.md
+  s_5047d3c7f64d94::t_27b0d7d0139f58 12,326
+agents/skills/code-review-checklist/scripts/render_review_page.py
+  s_5047d3c7f64d94::t_b049e6f90411df 190
+agents/skills/doc-review/SKILL.md
+  s_5047d3c7f64d94::t_6f0ede00496501 140,175
+agents/skills/executing-plans/SKILL.md
+  s_5047d3c7f64d94::t_cd443db921bf07 1-323
+agents/skills/executing-plans/scripts/task-done
+  s_5047d3c7f64d94::t_9b6222e50900d3 1-55
+agents/skills/executing-plans/scripts/task-start
+  s_5047d3c7f64d94::t_cb795df70eb35e 1-32
+agents/skills/iterate-pending-review/SKILL.md
+  s_5047d3c7f64d94::t_7e8435c1265c45 60,145
+agents/skills/pr-feedback-check/SKILL.md
+  s_5047d3c7f64d94::t_3254d69e93866c 122
+agents/skills/pr-quick/SKILL.md
+  s_5047d3c7f64d94::t_b89801c8b2c3ab 81
+agents/skills/pr-review/SKILL.md
+  s_5047d3c7f64d94::t_540a27280d232d 82,100,220
+agents/skills/requesting-code-review/SKILL.md
+  s_5047d3c7f64d94::t_050d2165869420 28,55
+agents/skills/requesting-code-review/code-reviewer.md
+  s_5047d3c7f64d94::t_078cbb351ab284 33-49
+agents/skills/reviewing-code/SKILL.md
+  s_5047d3c7f64d94::t_2837ed4e883caf 80
+agents/skills/subagent-driven-development/SKILL.md
+  s_5047d3c7f64d94::t_82cf2b4cd4f073 39,46,48-49,53-57,73,79,91-92,95-96,114-116,119-121,136-138,179-181,204-205,243,245-247,262-263,291-293,302-305,323-325
+agents/skills/subagent-driven-development/re-review-prompt.md
+  s_5047d3c7f64d94::t_275c0cc9b84086 112-113
+agents/skills/subagent-driven-development/references/batching.md
+  s_5047d3c7f64d94::t_b898c84e1535bd 1-11
+agents/skills/subagent-driven-development/references/cannot-verify.md
+  s_5047d3c7f64d94::t_200c08de4979b3 1-10
+agents/skills/subagent-driven-development/references/final-review.md
+  s_5047d3c7f64d94::t_512972a781f40f 1-49
+agents/skills/subagent-driven-development/references/fix-loop.md
+  s_5047d3c7f64d94::t_1f5f1bb8ccece5 1-77
+agents/skills/subagent-driven-development/references/handling-reports.md
+  s_5047d3c7f64d94::t_ffe1176ca45174 1-15
+agents/skills/subagent-driven-development/references/preflight.md
+  s_5047d3c7f64d94::t_da8d1c0a22b475 1-26
+agents/skills/subagent-driven-development/references/resuming.md
+  s_5047d3c7f64d94::t_f5ef4aa629a396 1-12
+agents/skills/subagent-driven-development/scripts/review-package
+  s_5047d3c7f64d94::t_6dba675a8a7727 7,10-11,14-20,22,31-41,46-47,54,57,60,63
+agents/skills/subagent-driven-development/scripts/sdd-repo
+  s_5047d3c7f64d94::t_8597c1ba21d65f 1-54
+agents/skills/subagent-driven-development/scripts/sdd-workspace
+  s_5047d3c7f64d94::t_a8e89fbae3222e 11-20,30-35,38-44,46,57-64,66-88,90-110
+agents/skills/subagent-driven-development/scripts/task-brief
+  s_5047d3c7f64d94::t_31376d0a5af7dc 6,9,12-18,20,31-33,37-95,97-101
+agents/skills/subagent-driven-development/task-reviewer-prompt.md
+  s_5047d3c7f64d94::t_aafc9f5e6513f6 192-193,204-205
+agents/skills/systematic-debugging/SKILL.md
+  s_5047d3c7f64d94::t_f9de04a41ce97b 91,95
+agents/skills/systematic-debugging/root-cause-tracing.md
+  s_5047d3c7f64d94::t_8fff35dc94df3d 104
+agents/skills/test-driven-development/SKILL.md
+  s_5047d3c7f64d94::t_01738425cc6d94 185-194
+agents/skills/using-git-worktrees/SKILL.md
+  s_5047d3c7f64d94::t_5def14764dba62 171
+agents/skills/using-superpowers/SKILL.md
+  s_5047d3c7f64d94::t_7d8db169e61be3 56,61
+agents/skills/using-superpowers/references/claude-code-tools.md
+  s_5047d3c7f64d94::t_9d52806dd00575 1-29
+agents/skills/using-superpowers/references/muse-tools.md
+  s_5047d3c7f64d94::t_088c6f99434c91 1-35
+agents/skills/work-log/SKILL.md
+  s_5047d3c7f64d94::t_3d92633ba38e82 59,77
+agents/skills/writing-plans/plan-document-reviewer-prompt.md
+  s_5047d3c7f64d94::t_7f991798a9c0a9 26
+agents/skills/writing-skills/SKILL.md
+  s_5047d3c7f64d94::t_3ad6919fa517c9 20,93,95-98,100-103,105,107-109,161-162,254,265,267-270,307
+agents/skills/writing-skills/references/bulletproofing.md
+  s_5047d3c7f64d94::t_e88989fe2a69ed 1-80
+agents/skills/writing-skills/references/discovery.md
+  s_5047d3c7f64d94::t_3c9c484cc06a43 1-201
+agents/skills/writing-skills/references/flowcharts.md
+  s_5047d3c7f64d94::t_53a0e55821de1a 1-37
+agents/skills/writing-skills/references/testing-skills-with-subagents.md
+  s_5047d3c7f64d94::t_6558ffcfa89aad 15,142
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "65b2632023c481332a40b44efce51df0d3e88514",
+  "prompts": {},
+  "sessions": {
+    "s_5047d3c7f64d94": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7a85ba4e-126f-42fe-bfd3-9dbf40716deb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Kevin Chen <kevinjchen94@gmail.com>"
+    }
+  }
+}
