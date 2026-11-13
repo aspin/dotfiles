@@ -27,6 +27,9 @@ for dir in agents/skills/*(/); do
   link $dir ~/.agents/skills/${dir:t}
 done
 
+# Merged rather than linked: Codex writes trust and other state into config.toml
+python3 codex/merge-config.py codex/config.toml
+
 for hook in claude/hooks/*.py; do
   link $hook ~/.claude/hooks/${hook:t}
 done

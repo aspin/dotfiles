@@ -19,6 +19,7 @@ PATH="/usr/bin:$PATH" PYTHON_BUILD_HOMEBREW_OPENSSL_FORMULA=openssl@3 pyenv inst
 pyenv global 3.11.15
 pyenv exec pip install virtualenv
 pyenv exec pip install virtualenvwrapper
+pyenv exec pip install tomlkit
 
 # Prezto Setup
 git clone --recursive https://github.com/aspin/prezto "${ZDOTDIR:-$HOME}/.zprezto"
@@ -37,7 +38,7 @@ rm -rf ~/powerline-fonts
 for file in $(ls ./)
 do
   case "$file" in
-    *zsh|*.sh|*.md|Brewfile|LICENSE|preferences|agents|claude|herdr) ;;
+    *zsh|*.sh|*.md|Brewfile|LICENSE|preferences|agents|claude|codex|herdr) ;;
     *)
       rm -f ~/.$file
       ln -s `pwd`/$file ~/.$file

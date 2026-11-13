@@ -1,0 +1,14 @@
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+network_access = true
+
+[features]
+hooks = true
+
+[tui]
+status_line = ["context-used", "used-tokens", "estimated-thread-cost"]
+vim_mode_default = true
+mouse_scroll_speed = 3

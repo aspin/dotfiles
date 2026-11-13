@@ -17,3 +17,5 @@ General-purpose skills for Claude Code and Codex.
 
 `setup.zsh` runs `install.zsh`, which symlinks the skills into `~/.claude/skills` (Claude Code)
 and `~/.agents/skills` (Codex), and the Claude Code hooks from `../claude` (see its README).
+It also merges `../codex/config.toml` into `~/.codex/config.toml`, overwriting only the keys it
+sets.
