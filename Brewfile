@@ -2,8 +2,6 @@
 
 work_machine = ENV["HOMEBREW_WORK_MACHINE"] == "1"
 
-tap "agavra/tap"
-
 # CLI
 brew "git"
 brew "wget"
@@ -20,7 +18,7 @@ brew "jq"
 brew "glow"
 brew "hunk"
 brew "herdr"
-brew "agavra/tap/tuicr"
+brew "tuicr"
 brew "pre-commit"
 brew "rustup"
 brew "git-filter-repo"

@@ -7,8 +7,6 @@ rm -rf ~/.zprezto
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install packages (WORK_MACHINE=1 skips IT-managed apps, see Brewfile)
-brew tap agavra/tap
-brew trust --formula agavra/tap/tuicr
 HOMEBREW_WORK_MACHINE="${WORK_MACHINE:-}" brew bundle --file=./Brewfile
 # ./packages-ubuntu.sh
 
