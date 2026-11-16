@@ -1,0 +1,19 @@
+herdr/config.toml
+  s_ee6c566e330fd9::t_ac19ceb184f3b6 17-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d0072e3a8cad13f5289d89b5fded08ded1cf25a1",
+  "prompts": {},
+  "sessions": {
+    "s_ee6c566e330fd9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "32142a72-6a3e-4f70-8eda-9e2423340955",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Kevin Chen <kevinjchen94@gmail.com>"
+    }
+  }
+}
