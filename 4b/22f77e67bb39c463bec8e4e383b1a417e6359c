@@ -1,0 +1,19 @@
+Brewfile
+  s_ee6c566e330fd9::t_d37b14f3bd9737 21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4b22f77e67bb39c463bec8e4e383b1a417e6359c",
+  "prompts": {},
+  "sessions": {
+    "s_ee6c566e330fd9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "32142a72-6a3e-4f70-8eda-9e2423340955",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Kevin Chen <kevinjchen94@gmail.com>"
+    }
+  }
+}
