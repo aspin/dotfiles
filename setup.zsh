@@ -36,7 +36,7 @@ rm -rf ~/powerline-fonts
 for file in $(ls ./)
 do
   case "$file" in
-    *zsh|*.sh|*.md|Brewfile|LICENSE|preferences|agents|claude|codex|herdr) ;;
+    *zsh|*.sh|*.md|Brewfile|LICENSE|preferences|agents|claude|codex|herdr|tuicr) ;;
     *)
       rm -f ~/.$file
       ln -s `pwd`/$file ~/.$file
@@ -55,6 +55,10 @@ ln -sf `pwd`/.gitconfig.aspin ~/.gitconfig.aspin
 mkdir -p ~/.config/herdr
 ln -sf `pwd`/herdr/config.toml ~/.config/herdr/config.toml
 herdr integration install claude
+
+# tuicr: vim editing in the review comment box
+mkdir -p ~/.config/tuicr
+ln -sf `pwd`/tuicr/config.toml ~/.config/tuicr/config.toml
 
 # Machine-specific git identity; gitconfig includes it by default
 touch ~/.gitconfig.local
